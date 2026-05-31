@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700;800&family=Noto+Nastaliq+Urdu:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-inter:  'Inter', system-ui, sans-serif;
+  --font-space:  'Space Grotesk', system-ui, sans-serif;
+  --font-urdu:   'Noto Nastaliq Urdu', serif;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background: #060608;
+  color: #F0F0F5;
+  font-family: var(--font-inter);
+  overflow-x: hidden;
+}
+
+/* Smooth scroll overridden by Lenis */
+html.lenis { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #060608; }
+::-webkit-scrollbar-thumb { background: #00FFCC44; border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: #00FFCC88; }
+
+/* Utility: electric glow text */
+.glow-text {
+  text-shadow: 0 0 30px rgba(0,255,204,0.6), 0 0 60px rgba(0,255,204,0.3);
+}
+
+/* Gradient accent line */
+.accent-line {
+  height: 2px;
+  background: linear-gradient(90deg, #00FFCC, #BBFF00, transparent);
+}
+
+/* Animated background grid */
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(0,255,204,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,255,204,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* Glass card */
+.glass {
+  background: rgba(13,13,16,0.7);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+/* Clip-path shapes */
+.clip-diagonal {
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+}
+
+/* RTL font override */
+[dir="rtl"] {
+  font-family: var(--font-urdu);
+  line-height: 2;
+}
+
+/* Hide Leaflet attribution branding on small screens (optional) */
+.leaflet-control-attribution { font-size: 10px; }
