@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { gsap } from 'gsap'
 import { ChevronDown, Zap } from 'lucide-react'
 import { useI18n } from '@/lib/i18n'
@@ -128,12 +129,13 @@ export default function Hero() {
               boxShadow: '0 0 80px rgba(0,255,204,0.12)',
             }}
           >
-            {/* Placeholder hero visual — replace src with actual scooter image */}
-            <div className="absolute inset-0 flex flex-col items-center justify-center">
-              <Zap className="w-16 h-16 text-accent/40 mb-3" />
-              <p className="text-xs text-muted/60">Hero scooter image</p>
-              <p className="text-xs text-muted/40">Replace with /public/images/hero-scooter.png</p>
-            </div>
+            <Image
+              src="/images/hero-scooter.png"
+              alt="VOLTx Hero Scooter"
+              fill
+              className="object-cover"
+              priority
+            />
 
             {/* Overlay gradient */}
             <div
